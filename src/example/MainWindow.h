@@ -68,7 +68,7 @@ class MainWindow : public QMainWindow
     
 public:
 
-    explicit MainWindow( QWidget *parent = 0 );
+    explicit MainWindow( QWidget *parent = nullptr );
     ~MainWindow();
 
 protected:

@@ -64,7 +64,7 @@ LayoutSquare::LayoutSquare( QWidget *parent, int spacing ) :
 ////////////////////////////////////////////////////////////////////////////////
 
 LayoutSquare::LayoutSquare( int spacing ) :
-    QLayout ( 0 )
+    QLayout ( nullptr )
 {
     init( spacing );
 }
@@ -73,10 +73,10 @@ LayoutSquare::LayoutSquare( int spacing ) :
 
 LayoutSquare::~LayoutSquare()
 {
-    if ( m_item ) delete m_item; m_item = 0;
+    if ( m_item ) delete m_item; m_item = nullptr;
 
-    if ( m_rectLast ) delete m_rectLast; m_rectLast = 0;
-    if ( m_geometry ) delete m_geometry; m_geometry = 0;
+    if ( m_rectLast ) delete m_rectLast; m_rectLast = nullptr;
+    if ( m_geometry ) delete m_geometry; m_geometry = nullptr;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -111,9 +111,9 @@ Qt::Orientations LayoutSquare::expandingDirections() const
 
 ////////////////////////////////////////////////////////////////////////////////
 
-QRect LayoutSquare::geometry()
+QRect LayoutSquare::geometry() const
 {
-    return (QRect)(*m_geometry);
+    return static_cast<QRect>(*m_geometry);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -127,7 +127,7 @@ bool LayoutSquare::hasHeightForWidth() const
 
 bool LayoutSquare::hasItem() const
 {
-    return ( m_item != 0 );
+    return ( m_item != nullptr );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -139,7 +139,7 @@ QLayoutItem* LayoutSquare::itemAt( int index ) const
         if ( hasItem() ) return m_item;
     }
 
-    return 0;
+    return nullptr;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -153,7 +153,7 @@ QSize LayoutSquare::minimumSize() const
 
 QLayoutItem* LayoutSquare::replaceItem( QLayoutItem *item )
 {
-    QLayoutItem *tempItem = 0;
+    QLayoutItem *tempItem = nullptr;
 
     if ( hasItem() ) tempItem = m_item;
 
@@ -200,12 +200,12 @@ QSize LayoutSquare::sizeHint() const
 
 QLayoutItem* LayoutSquare::take()
 {
-    QLayoutItem *tempItem = 0;
+    QLayoutItem *tempItem = nullptr;
 
     if ( hasItem() )
     {
         tempItem = m_item;
-        m_item = 0;
+        m_item = nullptr;
     }
 
     return tempItem;
@@ -217,7 +217,7 @@ QLayoutItem* LayoutSquare::takeAt( int index )
 {
     if( index == 0 ) return take();
 
-    return 0;
+    return nullptr;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

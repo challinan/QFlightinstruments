@@ -60,12 +60,12 @@ WidgetSix::WidgetSix( QWidget *parent ) :
     QWidget ( parent ),
     m_ui ( new Ui::WidgetSix ),
 
-    m_widgetADI ( 0 ),
-    m_widgetALT ( 0 ),
-    m_widgetASI ( 0 ),
-    m_widgetHSI ( 0 ),
-    m_widgetTC  ( 0 ),
-    m_widgetVSI ( 0 )
+    m_widgetADI ( nullptr ),
+    m_widgetALT ( nullptr ),
+    m_widgetASI ( nullptr ),
+    m_widgetHSI ( nullptr ),
+    m_widgetTC  ( nullptr ),
+    m_widgetVSI ( nullptr )
 {
     m_ui->setupUi( this );
 

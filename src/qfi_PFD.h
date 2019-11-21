@@ -560,7 +560,7 @@ private:
         float m_scaleX;
         float m_scaleY;
 
-        const float m_originalMarkeHeight;
+        // const float m_originalMarkeHeight;
         const float m_originalPixPerSpd1;
         const float m_originalPixPerSpd2;
         const float m_originalPixPerSpd4;
@@ -595,8 +595,8 @@ private:
         float m_distance;
         QString m_identifier;
 
-        bool m_Dist_Visible;
-        bool m_Ident_Visible;
+        // bool m_Dist_Visible;
+        // bool m_Ident_Visible;
 
         float m_scaleX;
         float m_scaleY;

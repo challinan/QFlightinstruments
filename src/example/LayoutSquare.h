@@ -78,7 +78,7 @@ public:
 
     Qt::Orientations expandingDirections() const;
 
-    QRect geometry();
+    QRect geometry() const;
 
     bool hasHeightForWidth() const;
 
