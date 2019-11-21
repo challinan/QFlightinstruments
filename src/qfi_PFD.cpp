@@ -189,8 +189,8 @@ void qfi_PFD::resizeEvent( QResizeEvent * pEvent )
 
 void qfi_PFD::init()
 {
-    m_scaleX = (float)width()  / (float)m_originalWidth;
-    m_scaleY = (float)height() / (float)m_originalHeight;
+    m_scaleX = static_cast<float>(width())  / static_cast<float>(m_originalWidth);
+    m_scaleY = static_cast<float>(height()) / static_cast<float>(m_originalHeight);
 
     m_adi->init( m_scaleX, m_scaleY );
     m_alt->init( m_scaleX, m_scaleY );
@@ -228,8 +228,8 @@ void qfi_PFD::reset()
 
 void qfi_PFD::updateView()
 {
-    m_scaleX = (float)width()  / (float)m_originalWidth;
-    m_scaleY = (float)height() / (float)m_originalHeight;
+    m_scaleX = static_cast<float>(width())  / static_cast<float>(m_originalWidth);
+    m_scaleY = static_cast<float>(height()) / static_cast<float>(m_originalHeight);
 
     m_adi->update( m_scaleX, m_scaleY );
     m_alt->update( m_scaleX, m_scaleY );
@@ -1845,7 +1845,7 @@ qfi_PFD::VSI::VSI( QGraphicsScene * scene ) :
     m_scaleX ( 1.0f ),
     m_scaleY ( 1.0f ),
 
-    m_originalMarkeHeight ( 75.0f ),
+    // m_originalMarkeHeight ( 75.0f ),
     m_originalPixPerSpd1  ( 30.0f ),
     m_originalPixPerSpd2  ( 20.0f ),
     m_originalPixPerSpd4  (  5.0f ),
@@ -1958,8 +1958,8 @@ qfi_PFD::ILS::ILS( QGraphicsScene *scene ) :
     m_distance ( 0.0f ),
     m_identifier ( "" ),
 
-    m_Dist_Visible ( false ),
-    m_Ident_Visible ( false ),
+    // m_Dist_Visible ( false ),
+    // m_Ident_Visible ( false ),
 
     m_scaleX ( 1.0f ),
     m_scaleY ( 1.0f ),
@@ -2061,4 +2061,3 @@ void qfi_PFD::ILS::init( float scaleX, float scaleY )
 
     update( scaleX, scaleY );
 }
->>>>>>> 299621ab9bef4983ba7aa80d5533615dbba68bdb

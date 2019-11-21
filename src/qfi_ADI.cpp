@@ -252,4 +252,3 @@ void qfi_ADI::updateView()
 
     m_scene->update();
 }
->>>>>>> 299621ab9bef4983ba7aa80d5533615dbba68bdb
